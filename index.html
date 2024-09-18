@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to App</title>
+    <script>
+        // Detect the user's device and redirect accordingly
+        function redirectToAppStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Check if the user is on iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+
+                window.location.href = 'https://apps.apple.com/in/app/spintrip-car-rentals/id6503087661';  
+            }
+            else if (/android/i.test(userAgent)) {
+                window.location.href = 'https://apps.apple.com/in/app/spintrip-car-rentals/id6503087661';  
+            } else {
+
+                window.location.href = 'https://spintrip.in';  
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = redirectToAppStore;
+    </script>
+</head>
+<body>
+    <p>Redirecting you to the appropriate app store...</p>
+</body>
+</html>
